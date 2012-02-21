@@ -26,7 +26,7 @@ using namespace std;
 int n, m;
 string names[101];
 
-long long answer = 0;
+long long answer = 1L;
 long long mod = 1000000007;
 
 int main(){
@@ -37,22 +37,15 @@ int main(){
     cin >> names[i];
   }
 
-  answer = n;
-
-  for (int i = 0; i < n; i++) {
-    for (int j = i+1; j < n; j++) {
-      int dif = 0;
-      for (int k = 0; k < m-1; k++) {
-        if(names[i][k] != names[j][k]){
-          dif += 2;
-        }
-      }
-
-      answer += dif;
-      answer %= mod;
+  for (int i = 0; i < m; i++) {
+    set<char> s;
+    for (int j = 0; j < n; j++) {
+      s.insert(names[j][i]);
     }
+    answer *= s.size();
+    answer %= mod;
   }
-  
+
   cout << answer << endl;
 
   return 0;
