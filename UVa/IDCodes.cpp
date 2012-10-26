@@ -1,3 +1,5 @@
+// http://uva.onlinejudge.org/external/1/146.html
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -18,7 +20,7 @@ int main() {
     if(next_permutation(seq, seq + str.size() )){
       cout << seq << endl;
     } else {
-      cout << "No successor" << endl;
+      cout << "No Successor" << endl;
     }
     cin >> str;
   }
